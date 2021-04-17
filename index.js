@@ -1,16 +1,17 @@
 const express = require('express')
 const app = express()
 const port = 4000
-
-app.get('/register', (req, res) => {
-  let user = req.params;
-  res.send(user)
-  res.json({result: 'Success'})
-})
+const cors = require('cors');
+app.use(cors());
 
 app.post('/register', (req, res) => {
-  let user = req.params;
-  res.json({result: 'Success'})
+  var user = req.body
+  res.json({result: 'Success message from server'})
+})
+
+app.put('/login', (req, res) => {
+  var user = req.body
+  res.json({result: 'Success message from server'})
 })
 
 app.listen(port, () => {
